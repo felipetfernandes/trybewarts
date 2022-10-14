@@ -15,7 +15,8 @@
   display: flex;
 }
 
-main , #evaluation-form {
+main,
+#evaluation-form {
   display: flex;
 }
 
@@ -32,11 +33,18 @@ main , #evaluation-form {
   flex-direction: row;
 }
 
-#input-name , #input-lastname , #input-email {
+#input-name,
+#input-lastname,
+#input-email {
   width: 300px;
 }
 
 #container-avaliation {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+.label-family {
+  display: flex;
+  flex-direction: column;
 }
