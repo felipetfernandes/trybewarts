@@ -10,3 +10,11 @@ main, #evaluation-form {
 #trybewarts-forms-logo {
     height: 500px;
 }
+
+#container-user-data {
+    flex-direction: row;
+}
+
+#input-name, #input-lastname, #input-email {
+    width: 300px;
+}
