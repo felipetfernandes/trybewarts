@@ -11,3 +11,16 @@ const login = () => {
 };
 
 loginButton.addEventListener('click', login);
+
+const getRequiredCheckbox = document.getElementById('agreement');
+
+function enableButton() {
+  const buttonSubmmit = document.getElementById('submit-btn');
+  const verifyCheck = getRequiredCheckbox.checked;
+  if (verifyCheck === true) {
+    buttonSubmmit.disabled = false;
+  } else {
+    buttonSubmmit.disabled = true;
+  }
+}
+getRequiredCheckbox.addEventListener('click', enableButton);
