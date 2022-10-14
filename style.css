@@ -35,3 +35,8 @@ main , #evaluation-form {
 #input-name , #input-lastname , #input-email {
   width: 300px;
 }
+
+.label-family {
+    display: flex;
+    flex-direction: column;
+}
