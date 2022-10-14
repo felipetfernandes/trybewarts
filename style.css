@@ -15,8 +15,7 @@
   display: flex;
 }
 
-main,
-#evaluation-form {
+main , #evaluation-form {
   display: flex;
 }
 
@@ -33,9 +32,7 @@ main,
   flex-direction: row;
 }
 
-#input-name,
-#input-lastname,
-#input-email {
+#input-name , #input-lastname , #input-email {
   width: 300px;
 }
 
