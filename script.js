@@ -12,6 +12,7 @@ const lastName = document.getElementById('input-lastname');
 const newEmail = document.getElementById('input-email');
 const house = document.getElementById('house');
 const family = document.getElementById('label-family');
+const arrayFamily = document.getElementsByName('family');
 
 const login = () => {
   if (email.value === 'tryber@teste.com' && password.value === '123456') {
@@ -34,6 +35,7 @@ function enableButton() {
   }
 }
 
+
 function criarLinha(input, text) {
     const linha = document.createElement('p');
     linha.innerText = `${input}: ${text}`;
@@ -47,7 +49,7 @@ function formChange() {
   criarLinha('Nome', `${name.value} ${lastName.value}`);
   criarLinha('Email', newEmail.value);
   criarLinha('Casa', house.value);
-  criarLinha('Família', family.value);
+  criarLinha('Família', getFamilyChecked());
   event.preventDefault();
 }
 
@@ -55,3 +57,12 @@ getRequiredCheckbox.addEventListener('click', enableButton);
 loginButton.addEventListener('click', login);
 textArea.addEventListener('input', count);
 buttonSubmmit.addEventListener('click', formChange);
+
+function getFamilyChecked() {
+  for (let index = 0; index < arrayFamily.length; index += 1) {
+    const verifyFamily = arrayFamily[index].checked;
+    if (verifyFamily === true) {
+      return arrayFamily[index].value;
+    }
+  }
+}
