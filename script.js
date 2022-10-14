@@ -4,6 +4,14 @@ const password = document.getElementById('password');
 const textArea = document.querySelector('textarea');
 const counter = document.getElementById('counter');
 const getRequiredCheckbox = document.getElementById('agreement');
+const buttonSubmmit = document.getElementById('submit-btn');
+const form = document.getElementById('evaluation-form');
+const formData = document.getElementById('form-data');
+const name = document.getElementById('input-name');
+const lastName = document.getElementById('input-lastname');
+const newEmail = document.getElementById('input-email');
+const house = document.getElementById('house');
+const family = document.getElementById('label-family');
 
 const login = () => {
   if (email.value === 'tryber@teste.com' && password.value === '123456') {
@@ -18,7 +26,6 @@ const count = () => {
 };
 
 function enableButton() {
-  const buttonSubmmit = document.getElementById('submit-btn');
   const verifyCheck = getRequiredCheckbox.checked;
   if (verifyCheck === true) {
     buttonSubmmit.disabled = false;
@@ -27,6 +34,24 @@ function enableButton() {
   }
 }
 
+function criarLinha(input, text) {
+    const linha = document.createElement('p');
+    linha.innerText = `${input}: ${text}`;
+    formData.appendChild(linha);
+}
+
+function formChange() {
+  form.style.display = 'none';
+  formData.classList.add('form-data');
+  formData.style.display = 'flex';
+  criarLinha('Nome', `${name.value} ${lastName.value}`);
+  criarLinha('Email', newEmail.value);
+  criarLinha('Casa', house.value);
+  criarLinha('Família', family.value);
+  event.preventDefault();
+}
+
 getRequiredCheckbox.addEventListener('click', enableButton);
 loginButton.addEventListener('click', login);
 textArea.addEventListener('input', count);
+buttonSubmmit.addEventListener('click', formChange);

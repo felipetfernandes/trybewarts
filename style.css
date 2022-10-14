@@ -45,3 +45,8 @@ main , #evaluation-form {
   display: flex;
   flex-direction: column;
 }
+
+.form-data {
+  display: none;
+  flex-direction: column;
+}
