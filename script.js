@@ -43,14 +43,8 @@ function techs() {
       list += `${techList[index].value}, `;
     }
   }
-  list = list.slice(0, list.length - 2);
+  list = list.slice(0, -2);
   return list;
-}
-
-function criateLine(input, text) {
-  const line = document.createElement('p');
-  line.innerText = `${input}: ${text}`;
-  formData.appendChild(line);
 }
 
 function getChecked(array) {
@@ -62,9 +56,14 @@ function getChecked(array) {
   }
 }
 
+function criateLine(input, text) {
+  const line = document.createElement('p');
+  line.innerText = `${input}: ${text}`;
+  formData.appendChild(line);
+}
+
 function formChange() {
   form.style.display = 'none';
-  formData.classList.add('form-data');
   formData.style.display = 'flex';
   criateLine('Nome', `${name.value} ${lastName.value}`);
   criateLine('Email', newEmail.value);
